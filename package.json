@@ -1,0 +1,37 @@
+{
+  "name": "budgetapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel src/index.html",
+    "deploy": "gh-pages -d build",
+    "clean": "rm -rf dist build .cache",
+    "build": "parcel build src/index.html --public-url /budgetapp/ -d build",
+    "check": "eslint src/**/*.js",
+    "fix": "eslint src/**/*.js --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AiranSchez/budgetapp.git"
+  },
+  "keywords": [],
+  "author": "Airan Sanchez Brito",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AiranSchez/budgetapp/issues"
+  },
+  "devDependencies": {
+    "eslint": "^7.11.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "gh-pages": "^3.1.0",
+    "parcel-bundler": "^1.12.4",
+    "stylelint": "^13.7.2",
+    "stylelint-config-standard": "^20.0.0"
+  },
+  "dependencies": {}
+}
