@@ -7,7 +7,7 @@
     "start": "parcel src/index.html",
     "deploy": "gh-pages -d build",
     "clean": "rm -rf dist build .cache",
-    "build": "parcel build src/index.html --public-url /budgetapp/ -d build",
+    "build": "parcel build src/index.html --public-url /budgetapp -d build",
     "check": "eslint src/**/*.js",
     "fix": "eslint src/**/*.js --fix"
   },
@@ -21,7 +21,7 @@
   "bugs": {
     "url": "https://github.com/AiranSchez/budgetapp/issues"
   },
-  "homepage": "https://airanschez.github.io/budgetapp/",
+  "homepage": "https://airanschez.github.io/budgetapp#readme",
   "devDependencies": {
     "eslint": "^7.11.0",
     "eslint-config-standard": "^14.1.1",
