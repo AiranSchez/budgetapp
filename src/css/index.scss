@@ -1,3 +1,85 @@
-body {
-  background-color: lightblue;
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  background-color: white;
+
+  & .title {
+    justify-content: center;
+    align-items: center;
+    background-color: aquamarine;
+    font-size: 30px;
+  }
+
+  & .row {
+    width: 80vw;
+    min-width: 500px;
+    height: 200px;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+
+    & .forms {
+      border: 1px solid lightgreen;
+      border-radius: 10px;
+      width: 400px;
+      height: 200px;
+      margin: 0 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    & .forms:last-child {
+      border: 1px solid salmon;
+    }
+
+    & .icons {
+      width: 200px;
+      height: 200px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      & .budget-amount {
+        font-size: 32px;
+        color: lightgreen;
+      }
+
+      & .expense-amount {
+        font-size: 32px;
+        color: lightcoral;
+      }
+
+      & .balance-amount {
+        font-size: 32px;
+      }
+    }
+
+    & .expenses {
+      margin: 0 20px;
+    }
+
+    & .history {
+      display: flex;
+      justify-content: space-around;
+      overflow: scroll;
+      width: 80vw;
+
+      background-color: coral;
+    }
+  }
+}
+
+.green {
+  color: lightgreen;
+}
+
+.red {
+  color: coral;
 }

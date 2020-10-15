@@ -1,0 +1,76 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  background-color: white;
+}
+.container .title {
+  justify-content: center;
+  align-items: center;
+  background-color: aquamarine;
+  font-size: 30px;
+}
+.container .row {
+  width: 80vw;
+  min-width: 500px;
+  height: 200px;
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  background-color: white;
+}
+.container .row .forms {
+  border: 1px solid lightgreen;
+  border-radius: 10px;
+  width: 400px;
+  height: 200px;
+  margin: 0 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.container .row .forms:last-child {
+  border: 1px solid salmon;
+}
+.container .row .icons {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.container .row .icons .budget-amount {
+  font-size: 32px;
+  color: lightgreen;
+}
+.container .row .icons .expense-amount {
+  font-size: 32px;
+  color: lightcoral;
+}
+.container .row .icons .balance-amount {
+  font-size: 32px;
+}
+.container .row .expenses {
+  margin: 0 20px;
+}
+.container .row .history {
+  display: flex;
+  justify-content: space-around;
+  overflow: scroll;
+  width: 80vw;
+  background-color: coral;
+}
+
+.green {
+  color: lightgreen;
+}
+
+.red {
+  color: coral;
+}
+
+/*# sourceMappingURL=/css.81192ade.css.map */
