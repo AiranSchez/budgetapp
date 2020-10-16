@@ -5798,13 +5798,13 @@ var _moment = _interopRequireDefault(require("moment"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var recharge = document.querySelector("#recharge");
-var rechargeButton = document.querySelector("#recharge-event");
-var budgetAmount = document.querySelector(".budget-amount");
+var recharge = document.querySelector('#recharge');
+var rechargeButton = document.querySelector('#recharge-event');
+var budgetAmount = document.querySelector('.budget-amount');
 var regExp = /^\$?\d+(,\d{3})*(\.\d{1,5})?$/;
-rechargeButton.addEventListener("click", function () {
+rechargeButton.addEventListener('click', function () {
   if (checkDecimal(recharge.value)) {
-    if (budgetAmount.innerHTML === "0") {
+    if (budgetAmount.innerHTML === '0') {
       budgetAmount.innerHTML = recharge.value;
       refreshBalance();
     } else {
@@ -5812,15 +5812,15 @@ rechargeButton.addEventListener("click", function () {
       refreshBalance();
     }
 
-    historyUpdate("Recarga de tarjeta", recharge.value);
+    historyUpdate('Recarga de tarjeta', recharge.value);
   }
 });
-var expenseInput = document.querySelector("#expense-amount");
-var expenseButton = document.querySelector(".expense-event");
-var expenseAmount = document.querySelector(".expense-amount");
-expenseButton.addEventListener("click", function () {
+var expenseInput = document.querySelector('#expense-amount');
+var expenseButton = document.querySelector('.expense-event');
+var expenseAmount = document.querySelector('.expense-amount');
+expenseButton.addEventListener('click', function () {
   if (checkDecimal(expenseInput.value)) {
-    if (expenseAmount.innerHTML === "0") {
+    if (expenseAmount.innerHTML === '0') {
       expenseAmount.innerHTML = expenseInput.value * -1;
       refreshBalance();
     } else {
@@ -5828,32 +5828,32 @@ expenseButton.addEventListener("click", function () {
       refreshBalance();
     }
 
-    var concept = document.querySelector("#expense-amount-title").value;
+    var concept = document.querySelector('#expense-amount-title').value;
     historyUpdate(concept, expenseAmount.innerHTML);
   }
 });
 
 var checkDecimal = function checkDecimal(number) {
-  return regExp.test(number) ? true : false;
+  return !!regExp.test(number);
 };
 
-var balance = document.querySelector(".balance-amount");
+var balance = document.querySelector('.balance-amount');
 
 var refreshBalance = function refreshBalance() {
-  var budgetAmount = document.querySelector(".budget-amount").innerHTML;
-  var expenseAmount = document.querySelector(".expense-amount").innerHTML;
+  var budgetAmount = document.querySelector('.budget-amount').innerHTML;
+  var expenseAmount = document.querySelector('.expense-amount').innerHTML;
 
-  if (budgetAmount === "0" && expenseAmount === "0") {
-    balance.innerHTML = "0";
+  if (budgetAmount === '0' && expenseAmount === '0') {
+    balance.innerHTML = '0';
   } else {
     balance.innerHTML = addNumbers(budgetAmount, expenseAmount);
 
     if (parseInt(balance.innerHTML) >= 0) {
-      balance.classList.add("green");
-      balance.classList.remove("red");
+      balance.classList.add('green');
+      balance.classList.remove('red');
     } else {
-      balance.classList.add("red");
-      balance.classList.remove("green");
+      balance.classList.add('red');
+      balance.classList.remove('green');
     }
   }
 };
@@ -5866,17 +5866,17 @@ var substractNumbers = function substractNumbers(num1, num2) {
   return parseFloat(num1) - parseFloat(num2);
 };
 
-var expenseHistoryTitle = document.querySelector(".expense-title-history");
-var expenseHistoryAmount = document.querySelector(".expense-value-history");
-var expenseHistoryDelete = document.querySelector(".edit");
+var expenseHistoryTitle = document.querySelector('.expense-title-history');
+var expenseHistoryAmount = document.querySelector('.expense-value-history');
+var expenseHistoryDelete = document.querySelector('.edit');
 
 var historyUpdate = function historyUpdate(concept, amount) {
-  var conceptElement = document.createElement("div");
-  var amountElement = document.createElement("div");
-  var editElement = document.createElement("div");
+  var conceptElement = document.createElement('div');
+  var amountElement = document.createElement('div');
+  var editElement = document.createElement('div');
   conceptElement.innerHTML = concept;
-  amountElement.innerHTML = amount + "€";
-  var time = (0, _moment.default)().format("MMMM Do YYYY, h:mm:ss a");
+  amountElement.innerHTML = amount + '€';
+  var time = (0, _moment.default)().format('MMMM Do YYYY, h:mm:ss a');
   editElement.innerHTML = time;
   expenseHistoryTitle.append(conceptElement);
   expenseHistoryAmount.append(amountElement);
@@ -5910,7 +5910,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "46123" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "45903" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
