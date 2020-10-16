@@ -1,20 +1,24 @@
+body {
+  background-color: #004481;
+}
+
 .container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   font-size: 16px;
-  background-color: white;
+  background-color: #004481;
 
   & .title {
     justify-content: center;
     align-items: center;
-    background-color: aquamarine;
     font-size: 30px;
+    color: white;
   }
 
   & .row {
-    width: 80vw;
+    width: 50vw;
     min-width: 500px;
     height: 200px;
     margin: 20px;
@@ -23,7 +27,6 @@
     background-color: white;
 
     & .forms {
-      border: 1px solid lightgreen;
       border-radius: 10px;
       width: 400px;
       height: 200px;
@@ -32,6 +35,25 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
+
+      & input {
+        border: none;
+        border-radius: 1px;
+        border-bottom: 1px solid grey;
+      }
+
+      & .form-container {
+        display: flex;
+        flex-direction: column;
+
+        & > * {
+          margin-bottom: 7px;
+        }
+      }
+
+      & [class^="error"] {
+        color: red;
+      }
 
       & button {
         box-shadow: 0 10px 14px -7px #3e7327;
@@ -47,6 +69,7 @@
         padding: 6px 19px;
         text-decoration: none;
         text-shadow: 0 0 0 #5b8a3c;
+        margin-top: 10px;
       }
 
       & button:hover {
@@ -60,17 +83,17 @@
       }
     }
 
-    & .forms:last-child {
-      border: 1px solid salmon;
-    }
-
     & .icons {
       width: 200px;
       height: 200px;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: space-around;
       align-items: center;
+
+      & svg {
+        width: 30px;
+      }
 
       & .budget-amount {
         font-size: 32px;
@@ -90,14 +113,38 @@
     & .expenses {
       margin: 0 20px;
     }
+  }
+
+  & .row:last-child {
+    flex-direction: column;
+    text-align: center;
+    justify-content: flex-start;
+
+    & .headers {
+      display: flex;
+      justify-content: space-around;
+      align-items: flex-start;
+      flex-direction: row;
+      width: 100%;
+      border-bottom: 3px solid;
+      border-image: linear-gradient(120deg, #004481 0%, #c2e9fb 100%) 1;
+      padding: 5px 0;
+
+      & > * {
+        width: 33%;
+      }
+    }
 
     & .history {
+      width: 100%;
       display: flex;
       justify-content: space-around;
       overflow: scroll;
-      width: 700px;
+      flex-grow: 1;
 
-      background-color: coral;
+      & > * {
+        width: 33%;
+      }
     }
   }
 }

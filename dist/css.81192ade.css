@@ -1,19 +1,23 @@
+body {
+  background-color: #004481;
+}
+
 .container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   font-size: 16px;
-  background-color: white;
+  background-color: #004481;
 }
 .container .title {
   justify-content: center;
   align-items: center;
-  background-color: aquamarine;
   font-size: 30px;
+  color: white;
 }
 .container .row {
-  width: 80vw;
+  width: 50vw;
   min-width: 500px;
   height: 200px;
   margin: 20px;
@@ -22,7 +26,6 @@
   background-color: white;
 }
 .container .row .forms {
-  border: 1px solid lightgreen;
   border-radius: 10px;
   width: 400px;
   height: 200px;
@@ -31,6 +34,21 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+.container .row .forms input {
+  border: none;
+  border-radius: 1px;
+  border-bottom: 1px solid grey;
+}
+.container .row .forms .form-container {
+  display: flex;
+  flex-direction: column;
+}
+.container .row .forms .form-container > * {
+  margin-bottom: 7px;
+}
+.container .row .forms [class^=error] {
+  color: red;
 }
 .container .row .forms button {
   box-shadow: 0 10px 14px -7px #3e7327;
@@ -46,6 +64,7 @@
   padding: 6px 19px;
   text-decoration: none;
   text-shadow: 0 0 0 #5b8a3c;
+  margin-top: 10px;
 }
 .container .row .forms button:hover {
   background: linear-gradient(to bottom, #72b352 5%, #77b55a 100%);
@@ -55,16 +74,16 @@
   position: relative;
   top: 1px;
 }
-.container .row .forms:last-child {
-  border: 1px solid salmon;
-}
 .container .row .icons {
   width: 200px;
   height: 200px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
+}
+.container .row .icons svg {
+  width: 30px;
 }
 .container .row .icons .budget-amount {
   font-size: 32px;
@@ -80,12 +99,33 @@
 .container .row .expenses {
   margin: 0 20px;
 }
-.container .row .history {
+.container .row:last-child {
+  flex-direction: column;
+  text-align: center;
+  justify-content: flex-start;
+}
+.container .row:last-child .headers {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-direction: row;
+  width: 100%;
+  border-bottom: 3px solid;
+  border-image: linear-gradient(120deg, #004481 0%, #c2e9fb 100%) 1;
+  padding: 5px 0;
+}
+.container .row:last-child .headers > * {
+  width: 33%;
+}
+.container .row:last-child .history {
+  width: 100%;
   display: flex;
   justify-content: space-around;
   overflow: scroll;
-  width: 700px;
-  background-color: coral;
+  flex-grow: 1;
+}
+.container .row:last-child .history > * {
+  width: 33%;
 }
 
 .green {
